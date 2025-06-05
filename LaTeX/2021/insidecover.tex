@@ -1,0 +1,81 @@
+%\AddToShipoutPicture*{\OtherBackgroundPic}
+
+% This is true if only doing the flight manual, not the pre-flight
+\ifisflight
+  % This one page needs to be one column to look right, even
+  % in the flight manual, proper.
+  \onecolumn
+\else 
+  % Doesn't seem to do anything for the chapter heading in flight manual.  Wah.
+  \vspace{-1cm}
+\fi
+
+% Note that this chapter heading is a little high up on the flight manual, but is great on PFM.
+% It may not be worthwhile fixing since we have bigger fish to fry. -- Piprrr
+\chapter*{\centering \textbf{\textcolor{white}{History of Mysteries}}}
+\label{sec:theme}
+
+
+% \begin{center}
+% \pgfornament[width = .5\textwidth,color = white]{88}
+% \end{center}
+
+
+
+%% And now drop in the image for the title page
+\AddToShipoutPicture*{\ThemePic}
+
+\ifisflight
+  \vspace{1cm}
+\fi
+
+\textbf{\textcolor{white}{Humanity on Earth is riddled with a long history of mysterious events, monuments, legends, folklore and puzzles. For centuries we have centered our science, art and religion on concepts and ideas that elude our present cognition. Were extraterrestrials perceived as gods? What technology was available for constructing things like the pyramids and Stonehenge? What happened to the Mayan civilization? Where is Atlantis?}}
+
+\textbf{\textcolor{white}{What we cannot answer on this planet may be revealed on  the dark side of the Moon. This lunar landing is no myth... We can prove it. Join in this year's lunar voyage to reveal or to just revel in our History of Mysteries.}}
+
+\textbf{\textcolor{white}{If we build a pyramid on the moon, can we complete the energetic grid? Can we finally communicate with aliens by building our own crop circles? Is this a maze to the center of consciousness or just a historical rabbit hole which only reveals more questions? Is the answer to the universe really 42? Were unicorns real? Could you pass the Sphinx's riddle? Maybe the Clinch River really is the fountain of youth!}}
+
+\textbf{\textcolor{white}{There are two things that could happen when diving deep into solving some of these mysteries. Either we uncover some new truths, new languages, new rituals, or we create even more mysteries, mazes, puzzles and traps. Choose your own adventure.}}
+
+\textbf{\textcolor{white}{This year’s art theme will illuminate our most ancient questions, visions and anomalies, sacred geometry and secret mythologies.}}
+
+
+\begin{center}
+\pgfornament[width = .5\textwidth,color = white]{88}
+\end{center}
+
+\vspace{1pt}
+
+\begin{multicols}{2}
+\begin{centering}
+\textbf{\textcolor{white}{Build a maze,\\
+or\\Bust a myth\\
+Solve the riddle\\
+Leave with more questions than you arrived with}}
+
+% \columnbreak
+
+\textbf{\textcolor{white}{The world will soon know what rests\\
+on the dark side of the moon\\
+Only for a fleeting moment will all be revealed}}
+
+% \columnbreak
+
+\textbf{\textcolor{white}{In the flames of our odyssey\\
+History will be made history once again\\
+And the mysteries will remain\\
+To be told merely as stories of what happened when we\\
+journeyed across the universe and... \\}}
+\end{centering}
+
+\begin{flushright}
+\textbf{\textcolor{white}{...To The Moon}}
+\end{flushright}
+
+\end{multicols}
+
+\ifisflight
+  \twocolumn
+\fi
+
+% \cleardoublepage

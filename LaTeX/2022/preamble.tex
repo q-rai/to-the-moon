@@ -1,0 +1,178 @@
+
+% This defines a new TeX boolean 'isflight' that is true iff we're making the *flight* manual, not the preflight
+\newif\ifisflight
+% same but for the portapotties events list
+\newif\ifisporto
+
+% Type 1 fonts
+\usepackage[T1]{fontenc}
+
+% for emojii support
+
+% trying for direct emoji support
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{fontawesome5}
+
+\newfontfamily\DejaSans{DejaVu Sans}
+
+% Include figures
+\usepackage{graphicx}
+
+% For SI Units; mostly to use for degrees.
+\usepackage{siunitx}
+
+%multirow support for tables
+\usepackage{multirow}
+
+% For nice slanted fractions
+\usepackage{xfrac}
+
+
+% for TODO items
+\usepackage[usenames,dvipsnames]{xcolor}
+% \usepackage[disable]{todonotes}
+\usepackage[]{todonotes}
+%% green bubbles for BOD todos
+\newcommand{\bod}[2][]{\todo[color=green,#1]{#2}}
+
+% Fancy tables
+\usepackage{booktabs}
+
+% Allow for use of multiple columns
+\usepackage{multicol}
+
+% This provides a wee bit better typography
+\usepackage{microtype}
+
+% Some basic math 
+\usepackage{calc}
+
+% Make the labels for labeling lists look nicer with a sans serif font
+\addtokomafont{labelinglabel}{\sffamily}
+
+% This to grab the \square used in checklists
+\usepackage{amssymb}
+
+% Better lists
+\usepackage{enumitem}
+
+% Make a checklist environment
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
+
+% \usepackage{libertine}
+\renewcommand{\familydefault}{\sfdefault}
+
+% For better appendix support
+% TODO Not sure if we want appendices; overkill?
+\usepackage{appendix}
+
+% sideways figures
+\usepackage{rotating}
+
+% figures wrapped in text
+\usepackage{wrapfig}
+
+% % caption next to figure (SCfigure)
+% \usepackage{sidecap}
+
+% % another attempt to get caption next to image
+% \usepackage{paracol}
+
+% Glossary definitions and acronyms common to pre-flight manual and survival guide
+\input{common/glossary}
+
+% set text in a shape
+\usepackage{shapepar}
+
+% add H placement option for floats which really puts them where you want them
+% \usepackage{float}
+\usepackage{floatrow}
+
+% absolute position for text (titlepage)
+\usepackage[absolute]{textpos}
+ \setlength{\TPHorizModule}{1mm}%
+ \setlength{\TPVertModule}{1mm}%
+
+% sideways figure/"H" placement 
+\usepackage{float}
+
+% This is for fancy schmancy ornaments
+\usepackage{pgfornament}
+\usepackage{tikz}
+\usetikzlibrary{calc,matrix,shapes}
+
+%%
+%% For setting the title page background
+%%
+\usepackage{eso-pic}
+
+%% fancy table alignment, used to create formatting for headers in events and camps with icons
+\usepackage{tabularray}
+\SetTblrInner{colsep=0pt}
+
+% \usepackage{tasks}
+
+\definecolor{red2022}{HTML}{C0062C}
+
+\newcommand\LetterSizeTitlePic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+{\includegraphics[width=\paperwidth,height=\paperheight]{images/cover-art/2022coverpageletter}}%
+\vfill
+}}}
+
+\newcommand\HalfLetterSizeTitlePic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{images/cover-art/2022coverpageHalfLetter}%
+\vfill
+}}}
+
+% NASA image from https://svs.gsfc.nasa.gov/vis/a000000/a003600/a003686/SPflyover_v07_still.5000.jpg
+\newcommand\ThemePic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+% \includegraphics[width=\paperwidth,height=\paperheight]{images/moon_bg.jpg}%
+\includegraphics[width=\paperwidth,height=\paperheight]{images/cover-art/landercroppedmore.jpg}%
+\vfill
+}}}
+
+%% Consistent notation for am and pm, easy to change right here :D
+\usepackage{xspace}
+\newcommand{\am}{am\xspace}
+\renewcommand{\pm}{pm\xspace}
+
+% Support for URLs and document links
+\usepackage[]{hyperref}
+% \hypersetup{colorlinks=true,allcolors=[rgb]{0,.5,.7}}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = [rgb]{0,.5,.7}, %Colour for external hyperlinks
+  linkcolor    = [rgb]{0,.5,.7}, %Colour of internal links
+  citecolor   = [rgb]{0,.5,.7} %Colour of citations
+}
+% \hypersetup{colorlinks=false}
+
+
+%% Remove leading space in new paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.7em}
+\widowpenalty 10000
+\clubpenalty 10000
+
+
+
+\frenchspacing % eliminate extra spaces after periods
+
+% \newcommand{\ttmfont}[1]{\fontsize{2.3cm}{1cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+% \newcommand{\guidetypefont}[1]{\fontsize{1.2cm}{1.4cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+% \newcommand{\guideversionfont}[1]{\fontsize{.95cm}{1.3cm}\selectfont{\textcolor{red2022}{\sffamily#1}}}
+% \newcommand{\locationfont}[1]{\fontsize{0.6cm}{.5cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily\uppercase{#1}}}}}

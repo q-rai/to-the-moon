@@ -1,0 +1,145 @@
+
+% This defines a new TeX boolean 'isflight' that is true iff we're making the *flight* manual, not the preflight
+\newif\ifisflight
+% same but for the portapotties events list
+\newif\ifisporto
+
+% Type 1 fonts
+\usepackage[T1]{fontenc}
+
+% for emojii support
+\usepackage{fontawesome}
+
+% trying for direct emoji support
+\usepackage{fontspec}
+\newfontfamily\DejaSans{DejaVu Sans}
+
+% Include figures
+\usepackage{graphicx}
+
+% For SI Units; mostly to use for degrees.
+\usepackage{siunitx}
+
+%multirow support for tables
+\usepackage{multirow}
+
+% For nice slanted franctions
+\usepackage{xfrac}
+
+% Support for URLs and document links
+\usepackage[]{hyperref}
+\hypersetup{colorlinks=true,allcolors=[rgb]{0,.5,.7}}
+% \hypersetup{colorlinks=false}
+
+% for TODO items
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[disable]{todonotes}
+%% green bubbles for BOD todos
+\newcommand{\bod}[2][]{\todo[color=green,#1]{#2}}
+
+% Fancy tables
+\usepackage{booktabs}
+
+% Allow for use of multiple columns
+\usepackage{multicol}
+
+% This provides a wee bit better typography
+\usepackage{microtype}
+
+% Some basic math 
+\usepackage{calc}
+
+% Make the labels for labeling lists look nicer with a sans serif font
+\addtokomafont{labelinglabel}{\sffamily}
+
+% This to grab the \square used in checklists
+\usepackage{amssymb}
+
+% Better lists
+\usepackage{enumitem}
+
+% Make a checklist environment
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
+
+% \usepackage{libertine}
+\renewcommand{\familydefault}{\sfdefault}
+
+% For better appendix support
+% TODO Not sure if we want appendices; overkill?
+\usepackage{appendix}
+
+% sideways figures
+\usepackage{rotating}
+
+% figures wrapped in text
+\usepackage{wrapfig}
+
+% % caption next to figure (SCfigure)
+% \usepackage{sidecap}
+
+% % another attempt to get caption next to image
+% \usepackage{paracol}
+
+% Glossary definitions and acronyms common to pre-flight manual and survival guide
+\input{glossary}
+
+% set text in a shape
+\usepackage{shapepar}
+
+% add H placement option for floats which really puts them where you want them
+% \usepackage{float}
+\usepackage{floatrow}
+
+% absolute position for text (titlepage)
+\usepackage[absolute]{textpos}
+ \setlength{\TPHorizModule}{1mm}%
+ \setlength{\TPVertModule}{1mm}%
+
+% sideways figure/"H" placement 
+\usepackage{float}
+
+% This is for fancy schmancy ornaments
+\usepackage{pgfornament}
+\usetikzlibrary{calc}
+
+%%
+%% For setting the title page background
+%%
+\usepackage{eso-pic}
+
+\newcommand\LetterSizeTitlePic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{images/2019coverpageletter.jpg}%
+\vfill
+}}}
+
+\newcommand\HalfLetterSizeTitlePic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{images/2019coverpageHalfLetter.jpg}%
+\vfill
+}}}
+
+% NASA image from https://svs.gsfc.nasa.gov/vis/a000000/a003600/a003686/SPflyover_v07_still.5000.jpg
+\newcommand\ThemePic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+% \includegraphics[width=\paperwidth,height=\paperheight]{images/moon_bg.jpg}%
+\includegraphics[width=\paperwidth,height=\paperheight]{images/landercroppedmore.jpg}%
+\vfill
+}}}
+
+%% Consistent notation for am and pm, easy to change right here :D
+\usepackage{xspace}
+\newcommand{\am}{am\xspace}
+\renewcommand{\pm}{pm\xspace}
+
+

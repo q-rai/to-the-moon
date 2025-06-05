@@ -1,0 +1,22 @@
+% Just the checklist
+%
+\documentclass[titlepage=firstiscover]{scrreprt}
+
+% \usepackage{fullpage} % FIXME, put this in to try to fix margins, which should have been honored in prev line
+
+\title{\textsf{To the Moon Checklist}}
+
+\author{Piprrr, Raptor}
+
+\input{preamble.tex}
+
+\newcommand{\ttmfont}[1]{\fontsize{2.3cm}{1cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+\newcommand{\guidetypefont}[1]{\fontsize{1.2cm}{1.4cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+\newcommand{\guideversionfont}[1]{\fontsize{.95cm}{1.3cm}\selectfont{\textcolor{red2022}{\sffamily#1}}}
+\newcommand{\locationfont}[1]{\fontsize{0.6cm}{.5cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily\uppercase{#1}}}}}
+
+\begin{document}
+
+\input{preflight-only/just_checklist}
+
+\end{document}

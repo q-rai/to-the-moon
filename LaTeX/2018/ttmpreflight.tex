@@ -1,0 +1,152 @@
+%%
+%% This is the 2018 To The Moon Burner Flight Manual
+%%
+%% Inspirational documents:
+%% 
+%% http://playadelfuego.org/sites/default/files/www_print_may13_web_spread.pdf
+%% http://alchemyburn.com/sites/default/files/Alchemy-2015-Survival-Guide.pdf
+%% http://www.euphoriaburn.com/sites/euphoriaburn.com/files/docs/Euphoria-2016-SurvivalGuide.pdf
+%% https://drive.google.com/open?id=17P6mr4Ru1PN8U_qDDtwwpvcRyxrh4A0x
+%% 
+
+\documentclass[fontsize=11pt,paper=letter,titlepage,numbers=noenddot,final]{scrreprt}
+
+% Failed experiment for smaller booklet size.  NOPE NOPE NOPE
+%\documentclass[fontsize=10pt,paper=a5,titlepage,numbers=noenddot]{scrreprt}
+
+% Ensure we expand to use more margin space
+% Commented out as it seems to damage some of the section headers. Should be using KOMA scripts
+% margin settings, anyway.
+% \usepackage{fullpage}
+
+% Type 1 fonts
+\usepackage[T1]{fontenc}
+
+% Include figures
+\usepackage{graphicx}
+
+% For SI Units; mostly to use for degrees.
+\usepackage{siunitx}
+
+% For nice slanted fractions
+\usepackage{xfrac}
+
+% For gobbling errant whitespace
+\usepackage{xspace}
+
+% Support for URLs and document links
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=false}
+
+% for TODO items
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[disable]{todonotes}
+
+% Fancy tables
+\usepackage{booktabs}
+
+% Allow for use of multiple columns
+\usepackage{multicol}
+
+% This provides a wee bit better typography
+\usepackage{microtype}
+
+% Make the labels for labeling lists look nicer with a sans serif font
+\addtokomafont{labelinglabel}{\sffamily}
+
+% This to grab the \square used in checklists
+\usepackage{amssymb}
+
+% Better lists
+\usepackage{enumitem}
+
+% Make a checklist environment
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
+
+% \usepackage{libertine}
+% \renewcommand{\familydefault}{\sfdefault}
+
+% For better appendix support
+% TODO Not sure if we want appendices; overkill?
+\usepackage{appendix}
+
+% sideways figures
+\usepackage{rotating}
+
+% figures wrapped in text
+\usepackage{wrapfig}
+
+% Glossary definitions and acronyms common to pre-flight manual and survival guide
+\input{glossary}
+
+% set text in a shape
+\usepackage{shapepar}
+
+
+\title{\textsf{To the Moon Burner's Pre-Flight Manual}}
+
+\author{Piprrr, Raptor}
+
+
+%%
+%% For setting the title page background
+%%
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{images/coverpagePFM.jpg}%
+\vfill
+}}}
+
+%% Remove leading space in new paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.7em}
+\widowpenalty 10000
+\clubpenalty 10000
+
+\newcommand{\bod}[2][]{\todo[color=green,#1]{#2}}
+
+\begin{document}
+
+\frenchspacing % eliminate extra spaces after periods
+
+\begin{titlepage}
+%% TODO Make title page similar to Apollo Flight Manual cover page
+%% And now drop in the image for the title page
+\AddToShipoutPicture*{\BackgroundPic}
+\hspace{1em} %required to push the content of the next page out of this one
+\end{titlepage}
+
+% \maketitle not needed because we're using a titlepage environment
+% \maketitle
+
+\cleardoublepage
+
+\tableofcontents
+
+\pagestyle{headings}
+
+\listoftodos
+
+% include the introductory stuff
+\input{welcome}
+
+% All things site, like directions, site maps, such as parking and (un)available amenities, checklist for packing
+\input{site}
+
+% include vital info about participating in the burn, like guidelines, 10 principles and such
+\input{essentials}
+
+% Information about the teams, which will be a natural segue to volunteering for some of them
+\input{teams}
+
+% how we can each contribute to the burn
+\input{volunteering}
+
+% glossary
+\input{appendix}
+\end{document}

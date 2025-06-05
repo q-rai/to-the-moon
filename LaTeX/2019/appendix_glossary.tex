@@ -1,0 +1,44 @@
+\appendix
+% \appendixpage
+\addappheadtotoc
+% \addcontentsline{toc}{chapter}{Appendix}
+\chapter[Appendix]{Appendix}
+% This is true if only doing the flight manual, not the pre-flight
+\ifisflight
+  % This one page needs to be one column to look right, even
+  % in the flight manual, proper.
+  % failed experiment to add thumb guides
+%   \addthumb{Welcome}{}{white}{black}
+% \putchapterthumb
+\fi
+% Force printing of all glossary entries, even if not referenced.
+% \glsaddall
+
+% \begin{multicols}{2}
+\printglossaries
+% \end{multicols}
+
+% \vspace*{\fill}
+% \begin{center}
+% 	\includegraphics[width=.9\textwidth]{images/flightplan3}
+% \end{center}
+% \vspace*{\fill}
+
+\ifisflight
+\vspace*{\fill}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.8\textwidth]{images/TTM2017tunnel.jpeg}
+\end{figure}
+\vspace*{\fill}
+
+% \clearpage
+
+% \clearpage
+% \section*{Notes}
+
+\fi
+
+
+% \chapter*{Notes}
+

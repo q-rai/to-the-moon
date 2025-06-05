@@ -1,0 +1,104 @@
+
+%%
+%% This is the 2022 To The Moon Burner PRE-Flight Manual
+%%
+%% Inspirational documents:
+%% 
+%% http://playadelfuego.org/sites/default/files/www_print_may13_web_spread.pdf
+%% http://alchemyburn.com/sites/default/files/Alchemy-2015-Survival-Guide.pdf
+%% http://www.euphoriaburn.com/sites/euphoriaburn.com/files/docs/Euphoria-2016-SurvivalGuide.pdf
+%% https://drive.google.com/open?id=17P6mr4Ru1PN8U_qDDtwwpvcRyxrh4A0x
+%% 
+%\documentclass[fontsize=11pt,paper=letter,margin=1in,titlepage,numbers=noenddot,final]{scrreprt}
+\documentclass[titlepage=firstiscover]{scrreprt}
+
+% \usepackage{fullpage} % FIXME, put this in to try to fix margins, which should have been honored in prev line
+
+\title{\textsf{To the Moon Burner's Pre-Flight Manual}}
+
+\author{Piprrr, Raptor}
+
+\input{preamble.tex}
+
+\newcommand{\ttmfont}[1]{\fontsize{2.3cm}{1cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+\newcommand{\guidetypefont}[1]{\fontsize{1.2cm}{1.4cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+\newcommand{\guideversionfont}[1]{\fontsize{.95cm}{1.3cm}\selectfont{\textcolor{red2022}{\sffamily#1}}}
+\newcommand{\locationfont}[1]{\fontsize{0.6cm}{.5cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily\uppercase{#1}}}}}
+
+\begin{document}
+
+\begin{titlepage}
+%% drop in the image for the title page
+\AddToShipoutPictureBG*{\LetterSizeTitlePic}
+
+% set text in front of image
+\ttmfont{~}\\
+\vspace{5.8cm}
+
+\hspace{0.7cm}\ttmfont{To The Moon}
+
+\vspace{0.7cm}
+
+\hspace{0.7cm}\guidetypefont{Pre-Flight Manual}
+
+\vspace{3.0cm}
+
+
+\hspace{0.7cm}\guideversionfont{Published --- \today}
+
+\vspace{2.8cm}
+
+\vbox{
+\hspace{0.7cm}\locationfont{Catoosa Event Center}
+
+\hspace{0.7cm}\locationfont{Allardt, Tennessee}
+}
+% \end{textblock}
+
+\vspace{-5cm} % to pull up the inner cover to where it belongs
+
+\hspace{1em} %required to push the content of the next page out of this one
+\end{titlepage}
+
+
+
+\input{common/insidecover}
+
+% \maketitle not needed because we're using a titlepage environment
+% \maketitle
+
+
+\tableofcontents
+
+\pagestyle{headings}
+
+% \listoftodos
+
+% include the introductory stuff
+\input{common/welcome}
+
+% All things site, like directions, site maps, such as parking and (un)available amenities, checklist for packing
+\input{preflight-only/site_pfm_only}
+
+% include vital info about participating in the burn, like guidelines, 10 principles and such
+\input{common/astrotraining}
+% \input{10principles_letter.tex}
+% \input{astrotraining2}
+% \input{10principles_halfletter.tex}
+
+% how we can each contribute to the burn
+\input{pocketguide-only/volunteering}
+
+% Information about the teams, which will be a natural segue to volunteering for some of them
+\input{common/teams}
+
+
+% glossary
+\input{common/appendix_glossary.tex}
+
+% % credits
+% \input{appendix_credits.tex}
+
+% % map and back cover
+% \input{appendix_mapAndBackCover.tex}
+\end{document}

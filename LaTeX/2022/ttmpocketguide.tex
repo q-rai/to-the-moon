@@ -1,0 +1,190 @@
+%%
+%% This is the 2018 To The Moon Burner Flight Manual
+%%
+%% Inspirational documents:
+%% 
+%% http://playadelfuego.org/sites/default/files/www_print_may13_web_spread.pdf
+%% http://alchemyburn.com/siteitemsep=.0125mm,parsep=2pts/default/files/Alchemy-2015-Survival-Guide.pdf
+%% http://www.euphoriaburn.com/sites/euphoriaburn.com/files/docs/Euphoria-2016-SurvivalGuide.pdf
+%% https://drive.google.com/open?id=17P6mr4Ru1PN8U_qDDtwwpvcRyxrh4A0x
+%% 
+
+% \documentclass[fontsize=8pt,twocolumn,titlepage=firstiscover,numbers=noenddot,DIV=16]{scrreprt}
+\documentclass[fontsize=8pt,twocolumn,titlepage=firstiscover,numbers=noenddot,DIV=16]{scrreprt}
+
+% specific formattinhg for pocket format
+\usepackage[margin=0.5in]{geometry}
+\geometry{
+  paperheight=8.5in,
+  paperwidth=5.5in,
+  heightrounded,
+}
+\setlength{\footskip}{.3in}
+
+
+
+\title{To the Moon Pocket Guide}
+
+\author{Raptor, Piprrr}
+
+
+%% Remove leading space in new paragraphs
+\setlength{\parindent}{0pt}
+%% Set space between paragraphs
+\setlength{\parskip}{.7em}
+%% Set space between columns
+\setlength{\columnsep}{1.8em}
+%% Penalize orphan lines at top and bottom of page
+\widowpenalty 10000
+\clubpenalty 10000
+
+
+% moved usepackages into separate file
+% file also has some other definitions, like the title page images etc.
+\input{preamble.tex}
+
+% Can't get this to work right
+% \usepackage[]{thumbs}
+
+% \usepackage{chapterthumb}
+% \newrobustcmd{\SetChapterThumbHeader}{%
+% \lohead[\putchapterthumb]{\putchapterthumb}%
+% }%
+
+% \newrobustcmd{\ClearChapterThumbHeader}{%
+% \lohead[]{}%
+% }%
+
+% \newrobustcmd{\refcommand}[1]{%
+% \nameref*{#1}%
+% }%
+
+% \newtoggle{UseChapterThumb}%
+% \toggletrue{UseChapterThumb}%
+
+% \renewcommand*{\chapterthumbformat}{\refcommand{chapter::title::\number\value{chapter}}}%
+
+% \makeatletter
+
+% \newcounter{totalchaptercounter}%
+
+% \newrobustcmd{\CreateUniqueChapterLabel}[1]{% Well, `unique` as it can be ;-)
+% \refstepcounter{totalchaptercounter}%
+% \label{chapter::title::\number\value{totalchaptercounter}}%
+% }%
+
+% \let\LaTeXStandardChapter\chapter%
+
+% \newcommand{\chapter@noopt}[1]{%
+% \iftoggle{UseChapterThumb}{\SetChapterThumbHeader}{\ClearChapterThumbHeader}
+% \LaTeXStandardChapter{#1}%
+% \CreateUniqueChapterLabel{#1}% Must appear after chapter title is done
+% }%
+
+% \newcommand{\chapter@opt}[2][]{%
+% \iftoggle{UseChapterThumb}{\SetChapterThumbHeader}{\ClearChapterThumbHeader}
+% \LaTeXStandardChapter[#1]{#2}%
+% \CreateUniqueChapterLabel{#2}% Must appear after chapter title is done
+% }%
+
+
+% \newcommand{\unstarredchapter}{%
+% \@ifnextchar[{\chapter@opt}{\chapter@noopt}%
+% }%
+
+% \newcommand{\starredchapter}[1]{%
+% \ClearChapterThumbHeader% Clear the headers -> no chapterthumb here 
+% \LaTeXStandardChapter*{#1}%   
+% }%
+
+% \renewcommand{\chapter}{%
+% \@ifstar{\starredchapter}{\unstarredchapter}%
+% }%
+
+
+% Yes, we are in "flight manual mode", so enable those tweaks; this variable defined in preamble
+\isflighttrue
+
+\newcommand{\ttmfont}[1]{\fontsize{1.4cm}{1cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+\newcommand{\guidetypefont}[1]{\fontsize{0.8cm}{1.4cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily#1}}}}
+\newcommand{\guideversionfont}[1]{\fontsize{.6cm}{1.3cm}\selectfont{\textcolor{red2022}{\sffamily#1}}}
+\newcommand{\locationfont}[1]{\fontsize{0.4cm}{.3cm}\selectfont{\textbf{\textcolor{red2022}{\sffamily\uppercase{#1}}}}}
+
+\begin{document}
+
+
+
+\begin{titlepage}
+%% drop in the image for the title page
+\AddToShipoutPicture*{\HalfLetterSizeTitlePic}
+
+% set text in front of image
+\ttmfont{~}\\
+\vspace{5.2cm}
+
+\hspace{1.7cm}\ttmfont{To The Moon}
+
+% \vspace{-0.1cm}
+
+\hspace{1.7cm}\guidetypefont{Pocket Guide}
+
+\vspace{-0.4cm}
+
+\hspace{1.7cm}\guideversionfont{Final --- June 19, 2022}
+
+\vspace{4.2cm}
+
+\hspace{1.7cm}\locationfont{Catoosa Event Center}
+
+\hspace{1.7cm}\locationfont{Allardt, Tennessee}
+
+\vspace{-1cm} % to pull up the inner cover to where it belongs
+
+\hspace{1em} %required to push the content of the next page out of this one
+\end{titlepage}
+
+% \maketitle not needed because we're using a titlepage environment
+% \maketitle
+
+\input{common/insidecover}
+
+
+\tableofcontents
+
+% \pagestyle{useheadings}
+
+% \listoftodos
+
+% include the introductory stuff
+\input{common/welcome}
+
+% All things site, like directions, site maps, such as parking and (un)available amenities, checklist for packing
+\input{common/site_both}
+
+% include vital info about participating in the burn, like guidelines, 10 principles and such
+\input{common/astrotraining}
+% \input{10principles_halfletter}
+% \input{astrotraining2}
+
+% how we can each contribute to the burn
+\input{pocketguide-only/volunteering}
+
+% part of the reason why we're here, yes?  :)
+\input{pocketguide-only/art}
+
+% another reason why we're here, yo.
+\input{pocketguide-only/events}
+
+% collectives of mayhem and mirth
+\input{pocketguide-only/camps}
+
+% glossary
+\input{common/appendix_glossary.tex}
+
+% % credits
+% \input{pocketguide-only/appendix_credits.tex}
+
+% map and back cover
+\input{pocketguide-only/appendix_mapAndBackCover}
+
+\end{document}

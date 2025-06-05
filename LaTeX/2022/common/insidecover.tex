@@ -1,0 +1,82 @@
+%\AddToShipoutPicture*{\OtherBackgroundPic}
+
+% This is true if only doing the flight manual, not the pre-flight
+\ifisflight
+  % This one page needs to be one column to look right, even
+  % in the flight manual, proper.
+  \onecolumn
+\else 
+  % Doesn't seem to do anything for the chapter heading in flight manual.  Wah.
+  \vspace{-1cm}
+\fi
+
+% Note that this chapter heading is a little high up on the flight manual, but is great on PFM.
+% It may not be worthwhile fixing since we have bigger fish to fry. -- Piprrr
+\chapter*{\centering \textbf{\textcolor{white}{Six Impossible Things}}}
+\label{sec:theme}
+
+
+\begin{center}
+\pgfornament[width = .5\textwidth,color = white]{68}
+\end{center}
+
+
+
+%% And now drop in the image for the title page
+\AddToShipoutPicture*{\ThemePic}
+
+\ifisflight
+  \vspace{1cm}
+\fi
+
+\textbf{\textcolor{white}{Deep in a forest, where the world seems to have turned upside down, we find ourselves speaking with the trees, gaining insight from creatures, wondering if this is all in our heads, a dream made up of fantasy or if our reality is simply just another version of wonderland --- we take the leap into the unknown --- knowing only that what we find down this rabbit hole will enchant us for the years to come. When the rest of the world sees only what has been known to be possible in the past --- we come here to remind ourselves that in this world. The impossible is our playground. They might say we have gone mad but we gather once more to remind the world, we are all mad here. We are not going back to yesterday because we were all different people then. We tip our hats to the extreme, sip tea amidst the stars, and remember Who We Are.}}
+
+\textbf{\textcolor{white}{On the moon, anything can happen - we believe in at least 6 Impossible Things happening on our journey before breakfast. When is breakfast, you ask? Well, it can be whenever and wherever you want it to be in wonderland. Our lunar return only continues to become curiouser \& curiouser the closer we get. A sense of synesthesia washes over as we encounter colors that don’t exist, sounds that smell like roses, stars suspended in caves, mirrors that reflect different realities and clocks that tell us that the time we seek is only Now.}}
+
+\textbf{\textcolor{white}{Follow us down the rabbit hole --- let go of any predispositions that keep us locked in the current agreement of reality, seek out the wisdom of magic cats and caterpillars, explore the ancient caves and forests of the moon and remember that this reality is yours to create --- no matter how impossible it may seem from other side. 2022 brings us the magic of the number 6 and the nurturing nature of relationships, family, healing and a sense of HOME.}}
+
+\textbf{\textcolor{white}{What may have seemed impossible for others, is something we, together can accomplish … all before breakfast at To The Moon.}}
+
+% \textbf{\textcolor{white}{}}
+
+
+
+% \begin{center}
+% \pgfornament[width = .5\textwidth,color = white]{88}
+% \end{center}
+
+% \vspace{1pt}
+
+% \begin{multicols}{2}
+% \begin{centering}
+% \textbf{\textcolor{white}{Build a maze,\\
+% or\\Bust a myth\\
+% Solve the riddle\\
+% Leave with more questions than you arrived with}}
+
+% % \columnbreak
+
+% \textbf{\textcolor{white}{The world will soon know what rests\\
+% on the dark side of the moon\\
+% Only for a fleeting moment will all be revealed}}
+
+% % \columnbreak
+
+% \textbf{\textcolor{white}{In the flames of our odyssey\\
+% History will be made history once again\\
+% And the mysteries will remain\\
+% To be told merely as stories of what happened when we\\
+% journeyed across the universe and... \\}}
+% \end{centering}
+
+% \begin{flushright}
+% \textbf{\textcolor{white}{...To The Moon}}
+% \end{flushright}
+
+% \end{multicols}
+
+\ifisflight
+  \twocolumn
+\fi
+
+% \cleardoublepage
